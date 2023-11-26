@@ -1,0 +1,976 @@
+{
+	"info": {
+		"_postman_id": "e9fc7f67-fd4c-455b-a49f-5b7aebbb751a",
+		"name": "UMS-API",
+		"description": "unofficial API for **LPU's** UMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25988835",
+		"_collection_link": "https://breakers-690.postman.co/workspace/EMS~27a28963-7730-477d-ab3a-4cbe4eea12b2/collection/25988835-e9fc7f67-fd4c-455b-a49f-5b7aebbb751a?action=share&source=collection_link&creator=25988835"
+	},
+	"item": [
+		{
+			"name": "UserEndPoints",
+			"item": [
+				{
+					"name": "LoginUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"AUTH_COOKIE\", pm.response.json().cookie);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reg_no\" : \"{{reg_no}}\",\r\n    \"password\" : \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/user/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserMe",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"AUTH_COOKIE\", pm.response.json().cookie);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reg_no\" : \"{{reg_no}}\",\r\n    \"password\" : \"{{password}}\",\r\n    \"cookie\" : \"{{AUTH_COOKIE}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/user/me",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserMessages",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"AUTH_COOKIE\", pm.response.json().cookie);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reg_no\" : \"{{reg_no}}\",\r\n    \"password\" : \"{{password}}\",\r\n    \"cookie\" : \"{{AUTH_COOKIE}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/user/messages",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetStudentCoursesWithSyllabus",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"AUTH_COOKIE\", pm.response.json().cookie);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reg_no\" : \"{{reg_no}}\",\r\n    \"password\" : \"{{password}}\",\r\n    \"cookie\" : \"{{AUTH_COOKIE}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/user/syllabus",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"syllabus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllAnnoucements",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"AUTH_COOKIE\", pm.response.json().cookie);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reg_no\" : \"{{reg_no}}\",\r\n    \"password\" : \"{{password}}\",\r\n    \"cookie\" : \"{{AUTH_COOKIE}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/annoucements",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"annoucements"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "knowYourAuthorities",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"AUTH_COOKIE\", pm.response.json().cookie);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reg_no\" : \"{{reg_no}}\",\r\n    \"password\" : \"{{password}}\",\r\n    \"cookie\" : \"{{AUTH_COOKIE}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/user/authorities",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"authorities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserAttendance",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"AUTH_COOKIE\", pm.response.json().cookie);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reg_no\" : \"{{reg_no}}\",\r\n    \"password\" : \"{{password}}\",\r\n    \"cookie\" : \"{{AUTH_COOKIE}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/user/attendance",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"attendance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAssignmentsMarks",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"AUTH_COOKIE\", pm.response.json().cookie);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reg_no\" : \"{{reg_no}}\",\r\n    \"password\" : \"{{password}}\",\r\n    \"cookie\" : \"{{AUTH_COOKIE}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/user/assignments",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"assignments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pendingAssignments",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"AUTH_COOKIE\", pm.response.json().cookie);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reg_no\" : \"{{reg_no}}\",\r\n    \"password\" : \"{{password}}\",\r\n    \"cookie\" : \"{{AUTH_COOKIE}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/user/pending_assignments",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"pending_assignments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getExams",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"AUTH_COOKIE\", pm.response.json().cookie);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reg_no\" : \"{{reg_no}}\",\r\n    \"password\" : \"{{password}}\",\r\n    \"cookie\" : \"{{AUTH_COOKIE}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/user/exams",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"exams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CGPA",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"AUTH_COOKIE\", pm.response.json().cookie);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reg_no\" : \"{{reg_no}}\",\r\n    \"password\" : \"{{password}}\",\r\n    \"cookie\" : \"{{AUTH_COOKIE}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/user/cgpa",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"cgpa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MARKS",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"AUTH_COOKIE\", pm.response.json().cookie);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reg_no\" : \"{{reg_no}}\",\r\n    \"password\" : \"{{password}}\",\r\n    \"cookie\" : \"{{AUTH_COOKIE}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/user/marks",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"marks"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TimeTableEndPoints",
+			"item": [
+				{
+					"name": "Makeup classes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"AUTH_COOKIE\", pm.response.json().cookie);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reg_no\" : \"{{reg_no}}\",\r\n    \"password\" : \"{{password}}\",\r\n    \"cookie\" : \"{{AUTH_COOKIE}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/timetable/makeup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"timetable",
+								"makeup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetTimeTableClasses",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"AUTH_COOKIE\", pm.response.json().cookie);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reg_no\" : \"{{reg_no}}\",\r\n    \"password\" : \"{{password}}\",\r\n    \"cookie\" : \"{{AUTH_COOKIE}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/timetable/classes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"timetable",
+								"classes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Today'sTimeTable",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"AUTH_COOKIE\", pm.response.json().cookie);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reg_no\" : \"{{reg_no}}\",\r\n    \"password\" : \"{{password}}\",\r\n    \"cookie\" : \"{{AUTH_COOKIE}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/timetable/today",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"timetable",
+								"today"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MiscellaneousRoutes",
+			"item": [
+				{
+					"name": "getDrives",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"AUTH_COOKIE\", pm.response.json().cookie);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reg_no\" : \"{{reg_no}}\",\r\n    \"password\" : \"{{password}}\",\r\n    \"cookie\" : \"{{AUTH_COOKIE}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/misc/drives",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"misc",
+								"drives"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LpuLivesearchUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/misc/search_user?id=12200129",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"misc",
+								"search_user"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "12200129"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HostelRoute",
+			"item": [
+				{
+					"name": "HostelDetailsWithElectricity",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"AUTH_COOKIE\", pm.response.json().cookie);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reg_no\" : \"{{reg_no}}\",\r\n    \"password\" : \"{{password}}\",\r\n    \"cookie\" : \"{{AUTH_COOKIE}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/hostel",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"hostel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LeaveSLip",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"AUTH_COOKIE\", pm.response.json().cookie);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reg_no\" : \"{{reg_no}}\",\r\n    \"password\" : \"{{password}}\",\r\n    \"cookie\" : \"{{AUTH_COOKIE}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/hostel/leave_slip",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"hostel",
+								"leave_slip"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "placementPortal",
+			"item": [
+				{
+					"name": "placementPortalLogin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"PLACEMENT_COOKIE\", pm.response.json().cookie);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reg_no\" : \"{{reg_no}}\",\r\n    \"password\" : \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/placement/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"placement",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "placementHomePage",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"PLACEMENT_COOKIE\", pm.response.json().cookie);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reg_no\" : \"{{reg_no}}\",\r\n    \"password\" : \"{{password}}\",\r\n    \"cookie\" : \"{{PLACEMENT_COOKIE}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/placement",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"placement"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDrives",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"PLACEMENT_COOKIE\", pm.response.json().cookie);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reg_no\" : \"{{reg_no}}\",\r\n    \"password\" : \"{{password}}\",\r\n    \"cookie\" : \"{{PLACEMENT_COOKIE}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/placement/drives",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"placement",
+								"drives"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/health",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": ""
+		},
+		{
+			"key": "reg_no",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "password",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "AUTH_COOKIE",
+			"value": ""
+		},
+		{
+			"key": "PLACEMENT_COOKIE",
+			"value": ""
+		}
+	]
+}

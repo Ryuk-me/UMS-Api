@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  ums-api:
+    container_name: ums-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - APP_NAME=${APP_NAME}
+      - APP_VERSION=${APP_VERSION}
+      - APP_DESCRIPTION=${APP_DESCRIPTION}
+      - PORT=${PORT}
+      - BASE_API_V1=${BASE_API_V1}
+      - PYTHON_ENV=${PYTHON_ENV}
+      - DOCS_ENABLED=${DOCS_ENABLED}
+      - LPU_LIVE_TOKEN=${LPU_LIVE_TOKEN}
+      - REG_NO=${REG_NO}
+      - PASSWORD=${PASSWORD}
+    env_file:
+      - ./.env.docker
+    restart: always
+    
+    command: uvicorn app.main:app --host 0.0.0.0 --port ${PORT} --workers=4
+    ports:
+      - ${PORT}:${PORT}

@@ -1,0 +1,17 @@
+__pycache__
+misc
+*.html
+summary.json
+dep
+*.zip
+venv
+.env.production
+.env.docker
+.env
+
+encrption.js
+encryption.py
+decryption.js
+check_test.py
+start.bat
+.pytest_cache

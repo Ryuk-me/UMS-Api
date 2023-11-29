@@ -228,9 +228,22 @@ $ http://localhost:${PORT}/docs
 
 ---
 
+> **Announcement View URLS**
+
+
+- https://ums.lpu.in/mobile/frmDisplayAnnouncement.aspx?aid={annoucemet_id}&tbl=Online
+    
+- https://ums.lpu.in/mobile/frmDisplayAnnouncement.aspx?aid={annoucemet_id}&tbl=StuGen
+
+> Replace {annoucemet_id} with the announcement-id
+
+Example : https://ums.lpu.in/mobile/frmDisplayAnnouncement.aspx?aid=123309&tbl=Online
+
+---
+
 ## Author
 
-👤 **Neeraj Kumar**
+👤 **Neeraj Kumar** URL
 
 * Github: [@Ryuk-me](https://github.com/Ryuk-me)
 * LinkedIN: [@Neeraj-Kumar](https://www.linkedin.com/in/neeraj-kumar-5178281b0/)

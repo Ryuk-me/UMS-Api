@@ -243,7 +243,7 @@ Example : https://ums.lpu.in/mobile/frmDisplayAnnouncement.aspx?aid=123309&tbl=O
 
 ## Author
 
-👤 **Neeraj Kumar** URL
+👤 **Neeraj Kumar**
 
 * Github: [@Ryuk-me](https://github.com/Ryuk-me)
 * LinkedIN: [@Neeraj-Kumar](https://www.linkedin.com/in/neeraj-kumar-5178281b0/)

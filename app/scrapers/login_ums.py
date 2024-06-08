@@ -78,9 +78,8 @@ async def login_using_reg_no_ums_home(user: UserLogin):
                     "__EVENTVALIDATION": (__EVENTVALIDATION),
                     "txtU": txtU,
                     "TxtpwdAutoId_8767": TxtpwdAutoId_8767,
-                    "DropDownList1": DropDownList1,
                     "ddlStartWith": ddlStartWith,
-                    "iBtnLogins150203125": "Login"
+                    "iBtnLogins150203125": "Login",
                     # "iBtnLogins.x": iBtnLogins_x,
                     # "iBtnLogins.y": iBtnLogins_y,
                 }
@@ -150,15 +149,15 @@ async def check_auth_status_ums_home(cookie) -> bool:
         headers = constant.USER_AGENT_JSON
         headers["Cookie"] = cookie
         resp = await session.post(
-            constant.UMS_AUTH_STATE_CHECK_URL, headers=headers, data=json.dumps({})
+            constant.UMS_STUDENT_PHONE_NUMBER_URL,
+            headers=headers,
+            data=json.dumps({}),
         )
         rs_json = await resp.json()
         await session.close()
-        if rs_json["d"] is None:
+        if rs_json.get("d", {}) is None:
             return False
-        elif len(rs_json["d"]) >= 0:
-            return True
-        return False
+        return True
 
 
 async def check_auth_status_placement_portal(cookie) -> bool:

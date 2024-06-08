@@ -15,3 +15,5 @@ decryption.js
 check_test.py
 start.bat
 .pytest_cache
+.python-version
+.vscode

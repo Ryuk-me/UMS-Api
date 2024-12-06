@@ -44,7 +44,6 @@ async def make_up_class_route(
     return makeup_details
 
 
-#!  It will give user's TODAYS TIME TABLE AND ROLL NO. AND SECTION
 @router.post("/today", status_code=status.HTTP_200_OK)
 async def get_user_today_time_table_route(
     user: Annotated[

@@ -13,7 +13,6 @@ class Settings(BaseSettings):
     LPU_LIVE_TOKEN: Optional[str] = None
     REG_NO: Optional[str] = None
     PASSWORD: Optional[str] = None
-    
 
     model_config = SettingsConfigDict(env_file=".env")
 

@@ -11,7 +11,6 @@ AUTH_COOKIE = ""
 PLACEMENT_AUTH_COOKIE = ""
 
 
-
 # HEALTH ROUTE
 def test_health_route():
     resp = client.get("/health")

@@ -30,7 +30,6 @@ async def placemet_drive_route(
     return res
 
 
-#! Search user from lpu using Reg_no or Name
 @router.get("/search_user/", status_code=status.HTTP_200_OK)
 def search_user_from_lpu_live_route(id: str):
     """

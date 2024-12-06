@@ -26,7 +26,6 @@ router = APIRouter(
 )
 
 
-#! USER CGPA, ATTENDANCE, SECTION Will be updated in DB, on every login request by user it will give basic user details
 @router.post(
     "/login",
     status_code=status.HTTP_200_OK,
@@ -40,7 +39,6 @@ async def login_user(user: user_schema.UserLogin):
     return {"cookie": cookie}
 
 
-#! GET CURRENT USER DETAILS
 @router.post("/me", status_code=status.HTTP_200_OK, response_model=user_schema.UserOut)
 async def current_user_details(
     user: Annotated[
@@ -55,7 +53,6 @@ async def current_user_details(
     return user_details
 
 
-#! GET USER MESSAGES
 @router.post("/messages", status_code=status.HTTP_200_OK)
 async def get_user_messages_route(
     user: Annotated[
@@ -70,7 +67,6 @@ async def get_user_messages_route(
     return resp
 
 
-#! SYLLABUS OF ALL SUBJECTS
 @router.post("/syllabus", status_code=status.HTTP_200_OK)
 async def get_user_syllabus_route(
     user: Annotated[
@@ -85,7 +81,6 @@ async def get_user_syllabus_route(
     return syallabus
 
 
-#! KNOW YOUR AUTHORITIES
 @router.post("/authorities", status_code=status.HTTP_200_OK)
 async def get_user_authorities_route(
     user: Annotated[
@@ -100,7 +95,6 @@ async def get_user_authorities_route(
     return resp
 
 
-#!  It will give user's individual attendance
 @router.post("/attendance", status_code=status.HTTP_200_OK)
 async def get_user_individual_attendance_route(
     user: Annotated[
@@ -124,7 +118,6 @@ async def get_user_individual_attendance_route(
     return summary
 
 
-#!  It will give user's assignment
 @router.post("/assignments", status_code=status.HTTP_200_OK)
 async def get_user_assignments(
     user: Annotated[
@@ -136,7 +129,6 @@ async def get_user_assignments(
     return res
 
 
-#!  It will give user's available exams
 @router.post("/exams", status_code=status.HTTP_200_OK)
 async def get_user_exams(
     user: Annotated[
@@ -148,7 +140,6 @@ async def get_user_exams(
     return res
 
 
-#!  It will give user's pending assignments
 @router.post("/pending_assignments", status_code=status.HTTP_200_OK)
 async def get_user_pending_assignments_route(
     user: Annotated[
@@ -160,7 +151,6 @@ async def get_user_pending_assignments_route(
     return res
 
 
-#!  It will give user's CGPA TERM WISE
 @router.post("/cgpa", status_code=status.HTTP_200_OK)
 async def get_user_cgpa_term_wise_route(
     user: Annotated[
@@ -172,7 +162,6 @@ async def get_user_cgpa_term_wise_route(
     return res
 
 
-#!  It will give user's MARKS TERM WISE
 @router.post("/marks", status_code=status.HTTP_200_OK)
 async def get_user_marks_term_wise_route(
     user: Annotated[

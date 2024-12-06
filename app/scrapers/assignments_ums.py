@@ -95,9 +95,9 @@ async def get_all_assignments_and_marks(cookie):
                         obj["total_marks"] = total_marks
                         obj["teacher_comments"] = teacher_comments
                         obj["assignment_download_url"] = assignment_download_url
-                        obj[
-                            "assignment_uploaded_by_student"
-                        ] = assignment_uploaded_by_student
+                        obj["assignment_uploaded_by_student"] = (
+                            assignment_uploaded_by_student
+                        )
                         assignments["theory"].append(obj)
 
                     try:
